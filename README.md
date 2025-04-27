@@ -34,8 +34,19 @@ $ devbox add postgresql
 $ initdb
 $ devbox services up
 $ psql postgres
-$ create database expense_tracker;
+$ create database money_tracker;
 $ \q
-$ psql -d expense_tracker -f docs/expense_tracker.sql
-$ devbox services stop
+$ psql -d money_tracker -f docs/money_tracker.sql
+$  devbox services stop
 ```
+
+### FAST API環境構築
+- インストール
+```bash
+$ pip install fastapi uvicorn
+```
+- APIサーバの起動(main.pyのディレクトリで実行)
+```bash
+$ uvicorn main:app --reload
+```
+- Webブラウザで http://localhost:8000/ にアクセスする
